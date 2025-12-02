@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Caravan';
+    src: url('Caravan.eot');
+    src: local('Caravan'),
+        url('Caravan.eot?#iefix') format('embedded-opentype'),
+        url('Caravan.woff2') format('woff2'),
+        url('Caravan.woff') format('woff'),
+        url('Caravan.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

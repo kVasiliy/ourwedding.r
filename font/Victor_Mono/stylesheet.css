@@ -1,0 +1,252 @@
+@font-face {
+    font-family: 'Victor Mono Oblique';
+    src: url('VictorMono-Oblique.eot');
+    src: local('Victor Mono Oblique'), local('VictorMono-Oblique'),
+        url('VictorMono-Oblique.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-Oblique.woff2') format('woff2'),
+        url('VictorMono-Oblique.woff') format('woff'),
+        url('VictorMono-Oblique.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-ThinItalic.eot');
+    src: local('Victor Mono Thin Italic'), local('VictorMono-ThinItalic'),
+        url('VictorMono-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-ThinItalic.woff2') format('woff2'),
+        url('VictorMono-ThinItalic.woff') format('woff'),
+        url('VictorMono-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-LightItalic.eot');
+    src: local('Victor Mono Light Italic'), local('VictorMono-LightItalic'),
+        url('VictorMono-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-LightItalic.woff2') format('woff2'),
+        url('VictorMono-LightItalic.woff') format('woff'),
+        url('VictorMono-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-ThinOblique.eot');
+    src: local('Victor Mono Thin Oblique'), local('VictorMono-ThinOblique'),
+        url('VictorMono-ThinOblique.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-ThinOblique.woff2') format('woff2'),
+        url('VictorMono-ThinOblique.woff') format('woff'),
+        url('VictorMono-ThinOblique.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-Italic.eot');
+    src: local('Victor Mono Italic'), local('VictorMono-Italic'),
+        url('VictorMono-Italic.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-Italic.woff2') format('woff2'),
+        url('VictorMono-Italic.woff') format('woff'),
+        url('VictorMono-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-SemiBold.eot');
+    src: local('Victor Mono SemiBold'), local('VictorMono-SemiBold'),
+        url('VictorMono-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-SemiBold.woff2') format('woff2'),
+        url('VictorMono-SemiBold.woff') format('woff'),
+        url('VictorMono-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-Thin.eot');
+    src: local('Victor Mono Thin'), local('VictorMono-Thin'),
+        url('VictorMono-Thin.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-Thin.woff2') format('woff2'),
+        url('VictorMono-Thin.woff') format('woff'),
+        url('VictorMono-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-ExtraLightItalic.eot');
+    src: local('Victor Mono ExtraLight Italic'), local('VictorMono-ExtraLightItalic'),
+        url('VictorMono-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-ExtraLightItalic.woff2') format('woff2'),
+        url('VictorMono-ExtraLightItalic.woff') format('woff'),
+        url('VictorMono-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-MediumItalic.eot');
+    src: local('Victor Mono Medium Italic'), local('VictorMono-MediumItalic'),
+        url('VictorMono-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-MediumItalic.woff2') format('woff2'),
+        url('VictorMono-MediumItalic.woff') format('woff'),
+        url('VictorMono-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-SemiBoldItalic.eot');
+    src: local('Victor Mono SemiBold Italic'), local('VictorMono-SemiBoldItalic'),
+        url('VictorMono-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-SemiBoldItalic.woff2') format('woff2'),
+        url('VictorMono-SemiBoldItalic.woff') format('woff'),
+        url('VictorMono-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-SemiBoldOblique.eot');
+    src: local('Victor Mono SemiBold Oblique'), local('VictorMono-SemiBoldOblique'),
+        url('VictorMono-SemiBoldOblique.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-SemiBoldOblique.woff2') format('woff2'),
+        url('VictorMono-SemiBoldOblique.woff') format('woff'),
+        url('VictorMono-SemiBoldOblique.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-Light.eot');
+    src: local('Victor Mono Light'), local('VictorMono-Light'),
+        url('VictorMono-Light.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-Light.woff2') format('woff2'),
+        url('VictorMono-Light.woff') format('woff'),
+        url('VictorMono-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-BoldItalic.eot');
+    src: local('Victor Mono Bold Italic'), local('VictorMono-BoldItalic'),
+        url('VictorMono-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-BoldItalic.woff2') format('woff2'),
+        url('VictorMono-BoldItalic.woff') format('woff'),
+        url('VictorMono-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-Regular.eot');
+    src: local('Victor Mono Regular'), local('VictorMono-Regular'),
+        url('VictorMono-Regular.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-Regular.woff2') format('woff2'),
+        url('VictorMono-Regular.woff') format('woff'),
+        url('VictorMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-Medium.eot');
+    src: local('Victor Mono Medium'), local('VictorMono-Medium'),
+        url('VictorMono-Medium.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-Medium.woff2') format('woff2'),
+        url('VictorMono-Medium.woff') format('woff'),
+        url('VictorMono-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-ExtraLight.eot');
+    src: local('Victor Mono ExtraLight'), local('VictorMono-ExtraLight'),
+        url('VictorMono-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-ExtraLight.woff2') format('woff2'),
+        url('VictorMono-ExtraLight.woff') format('woff'),
+        url('VictorMono-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-ExtraLightOblique.eot');
+    src: local('Victor Mono ExtraLight Oblique'), local('VictorMono-ExtraLightOblique'),
+        url('VictorMono-ExtraLightOblique.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-ExtraLightOblique.woff2') format('woff2'),
+        url('VictorMono-ExtraLightOblique.woff') format('woff'),
+        url('VictorMono-ExtraLightOblique.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-MediumOblique.eot');
+    src: local('Victor Mono Medium Oblique'), local('VictorMono-MediumOblique'),
+        url('VictorMono-MediumOblique.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-MediumOblique.woff2') format('woff2'),
+        url('VictorMono-MediumOblique.woff') format('woff'),
+        url('VictorMono-MediumOblique.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-Bold.eot');
+    src: local('Victor Mono Bold'), local('VictorMono-Bold'),
+        url('VictorMono-Bold.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-Bold.woff2') format('woff2'),
+        url('VictorMono-Bold.woff') format('woff'),
+        url('VictorMono-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Victor Mono';
+    src: url('VictorMono-LightOblique.eot');
+    src: local('Victor Mono Light Oblique'), local('VictorMono-LightOblique'),
+        url('VictorMono-LightOblique.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-LightOblique.woff2') format('woff2'),
+        url('VictorMono-LightOblique.woff') format('woff'),
+        url('VictorMono-LightOblique.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Victor Mono Oblique';
+    src: url('VictorMono-BoldOblique.eot');
+    src: local('Victor Mono Bold Oblique'), local('VictorMono-BoldOblique'),
+        url('VictorMono-BoldOblique.eot?#iefix') format('embedded-opentype'),
+        url('VictorMono-BoldOblique.woff2') format('woff2'),
+        url('VictorMono-BoldOblique.woff') format('woff'),
+        url('VictorMono-BoldOblique.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+

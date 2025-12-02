@@ -1,0 +1,288 @@
+/*@font-face {
+    font-family: "VictorMono-Thin";
+    font-style: normal;
+    font-weight: 100;
+    src: url("./font/Victor_Mono/VictorMono-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "PoiretOne-Regular";
+    font-style: normal;
+    font-weight: 100;
+    src: url("./font/Poiret_One/PoiretOne-Regular.ttf") format("truetype");
+}*/
+
+
+@font-face {
+    font-family: 'GreatVibes';
+    src: url('./font/Great_Vibes/GreatVibes-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Caravan';
+    src: url('Caravan.eot');
+    src: local('Caravan'),
+        url('./font/font/Caravan.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "Bodega-Script";
+    font-style: normal;
+    font-weight:100;
+    src: url("./font/Bodega/Bodega-Script.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    font-style: normal;
+    font-weight:100;
+    src: url("./font/Montserrat/Montserrat-Regular.ttf") format("truetype");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat-Regular", sans-serif;
+/*
+    background: #f7f8fa;
+    background-image: url('img/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+*/
+    font-size: 20px;
+    color: rgb(62, 52, 47);
+}
+
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* чтобы видео было фоном */
+}
+
+.video-bg video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* главное свойство для фона */
+}
+
+h1, h2, h3, h4, h4, h5 {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+}
+
+section {
+    width: 100%;
+}
+
+section .wrap {
+//    padding: 30px 100px 30px 100px;
+    max-width: 1000px;   /* ограничение сверху */
+    min-width: 400px;   /* ограничение сверху */
+    width: 100%;         /* разрешаем растягиваться */
+    margin: 0 auto;      /* центрирование */
+    padding: 30px 0px;
+}
+
+.main, .invitation, .timing, .dress-code, .hints h4, .location h4{
+    text-align: center;
+}
+
+.invitation, .timing {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.dress-code {
+    background: rgba(255, 255, 255, 1.0);
+}
+
+.hints {
+    background: rgba(255, 252, 239, 1.0);
+}
+
+h4{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.item {
+    display: flex;
+    flex-direction: flex;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.item h5{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.icon {
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+.main {
+    margin: 100px 0px 100px 0px;
+}
+
+.main h1 {
+    margin-bottom: 100px;
+    font-family: "Bodega-Script", sans-serif;
+    text-transform: none;
+    font-size: 64px;
+    font-weight: 400;
+}
+
+.main p span {
+    font-size: 70px;
+}
+
+.dresscode-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-gap: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 35px;             /* как на примере */
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;               /* важно! */
+    display: block;
+}
+
+
+.dresscode-color {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin: 40px;
+}
+
+.color-item {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: gray;
+}
+
+.color-item1 {
+    background: #0b090c;
+}
+
+.color-item2 {
+    background: #3A2D28;
+}
+
+.color-item3 {
+    background: #50311d;
+}
+
+.color-item4 {
+    background: #A48374;
+}
+
+.color-item5 {
+    background: #B89C82;
+}
+
+.color-item6 {
+    background: #DACFB6;
+}
+
+.color-item7 {
+    background: #F9F5ED;
+}
+
+
+.form {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.form-container {
+    background: white;
+    padding: 25px;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+
+.form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.form input, .form select, .form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #0b5fff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #004be0;
+}
