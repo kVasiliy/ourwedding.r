@@ -48,16 +48,24 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Montserrat-Regular", sans-serif;
-/*
-    background: #f7f8fa;
-    background-image: url('img/background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-*/
-    font-size: 20px;
     color: rgb(62, 52, 47);
+}
+
+h1, h2, h3, h4, h4, h5 {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+section {
+    width: 100%;
 }
 
 .video-bg {
@@ -82,29 +90,11 @@ body {
     object-fit: cover; /* главное свойство для фона */
 }
 
-h1, h2, h3, h4, h4, h5 {
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-}
-
-p {
-    margin: 0;
-    padding: 0;
-    line-height: 30px;
-}
-
-section {
-    width: 100%;
-}
-
-section .wrap {
-//    padding: 30px 100px 30px 100px;
-    max-width: 1000px;   /* ограничение сверху */
-    min-width: 400px;   /* ограничение сверху */
-    width: 100%;         /* разрешаем растягиваться */
-    margin: 0 auto;      /* центрирование */
-    padding: 30px 0px;
+.wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+//    border: solid 1px black;
+    padding: 30px 10px;
 }
 
 .main, .invitation, .timing, .dress-code, .hints h4, .location h4{
@@ -123,42 +113,54 @@ section .wrap {
     background: rgba(255, 252, 239, 1.0);
 }
 
-h4{
-    font-size: 35px;
-    margin-bottom: 30px;
-}
-
-.item {
-    display: flex;
-    flex-direction: flex;
-    width: 100%;
-    margin-top: 30px;
-}
-
-.item h5{
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-
-.icon {
-    font-size: 30px;
-    margin-right: 20px;
-}
-
 .main {
-    margin: 100px 0px 100px 0px;
+    padding: 100px 0px 100px 0px;
 }
 
 .main h1 {
-    margin-bottom: 100px;
+    margin: 20px 0 100px 0;
     font-family: "Bodega-Script", sans-serif;
     text-transform: none;
     font-size: 64px;
     font-weight: 400;
 }
 
-.main p span {
+.welcom {
+    font-size: 25px;
+}
+
+.main span {
+    margin: 10px 0 10px 0;
     font-size: 70px;
+}
+
+.invitation h3{
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.invitation p{
+    margin: 0 0 15px 0;
+}
+
+h4{
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.date {
+    margin-bottom: 25px;
+}
+
+.time {
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.name {
+    font-weight: normal;
+    margin-bottom: 25px;
 }
 
 .dresscode-gallery {
@@ -172,7 +174,7 @@ h4{
 
 .gallery-item {
     overflow: hidden;
-    border-radius: 35px;             /* как на примере */
+    border-radius: 35px;             
     background: #fff;
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     display: flex;
@@ -183,7 +185,7 @@ h4{
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;               /* важно! */
+    object-fit: cover;              
     display: block;
 }
 
@@ -194,14 +196,13 @@ h4{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
-    margin: 40px;
+    margin: 40px 0;
 }
 
 .color-item {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: gray;
 }
 
 .color-item1 {
@@ -230,59 +231,22 @@ h4{
 
 .color-item7 {
     background: #F9F5ED;
+    border: solid 1px silver;
 }
 
-
-.form {
+.item {
     display: flex;
-    justify-content: center;
-    padding: 20px;
-    flex-direction: column;
-}
-
-.form-container {
-    background: white;
-    padding: 25px;
-    max-width: 500px;
+    flex-direction: flex;
     width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin-top: 30px;
 }
 
-
-.form label {
-    display: block;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.form input, .form select, .form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    box-sizing: border-box;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-fieldset {
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 10px;
+.item h5{
+    font-size: 25px;
     margin-bottom: 20px;
 }
 
-button {
-    width: 100%;
-    padding: 12px;
-    background: #0b5fff;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #004be0;
+.icon {
+    font-size: 30px;
+    margin-right: 20px;
 }
