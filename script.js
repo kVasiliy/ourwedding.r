@@ -1,3 +1,25 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.slide-up-text').forEach(el => {
+        observer.observe(el);
+    });
+
+
+
+
+
+
+
+/*************************/
+
 const items = document.querySelectorAll('.gallery-item');
 let index = 0;
 let autoTimer;
@@ -112,19 +134,22 @@ container.addEventListener('touchend', (e) => {
 
 
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('visible');
-            // Если нужно, чтобы анимация срабатывала только один раз:
-            observer.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.2 // 20% элемента должны быть видны, чтобы сработало
+
+
+
+    
 });
 
-// Выбираем все элементы с классом .slide-up-text
-document.querySelectorAll('.slide-up-text').forEach(el => {
-    observer.observe(el);
-});
+
+
+
+
+
+
+
+
+
+
+
+
+

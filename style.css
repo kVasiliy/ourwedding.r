@@ -98,10 +98,10 @@ section {
     transform: translate(-50%, -50%);
     object-fit: cover; 
 }*/
-
+/*
 .video-bg {
     position: fixed;
-    inset: 0; /* сокращение top:0; right:0; bottom:0; left:0; */
+    inset: 0; 
     overflow: hidden;
     z-index: -1;
 }
@@ -113,11 +113,11 @@ section {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    transform: none; /* убираем translate */
+    transform: none;
     min-width: 100%;
     min-height: 100%;
 }
-
+*/
 
 .wrap {
     max-width: 1000px;
@@ -469,7 +469,7 @@ button:hover {
 
 .slide-up-text {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(100px);
     transition: all 1s ease-out;
 }
 
