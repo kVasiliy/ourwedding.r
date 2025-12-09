@@ -98,7 +98,7 @@ section {
     transform: translate(-50%, -50%);
     object-fit: cover; 
 }*/
-/*
+
 .video-bg {
     position: fixed;
     inset: 0; 
@@ -117,7 +117,7 @@ section {
     min-width: 100%;
     min-height: 100%;
 }
-*/
+
 
 .wrap {
     max-width: 1000px;
@@ -142,11 +142,11 @@ section {
 }
 
 .main {
-    padding: 100px 0px 100px 0px;
+    padding: 75px 0px 100px 0px;
 }
 
 .main h1 {
-    margin: 20px 0 100px 0;
+    margin: 50px 0 100px 0;
     font-family: "Bodega-Script", sans-serif;
     text-transform: none;
     font-size: 64px;
@@ -154,7 +154,7 @@ section {
 }
 
 .footter h1 {
-    margin: 10px 0 100px 0;
+    margin: 0 0 100px 0;
     font-family: "Bodega-Script", sans-serif;
     text-transform: none;
     font-size: 40px;
