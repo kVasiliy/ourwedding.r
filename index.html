@@ -7,6 +7,7 @@
 
     <!-- Подключение внешнего CSS -->
     <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="script.js"></script>
 
     <script src="https://kit.fontawesome.com/ad461382ea.js" crossorigin="anonymous"></script>
 
@@ -37,7 +38,7 @@
 
     <section class="timing">
         <div class="wrap">
-            <h4>Тайминг</h4>
+            <h4 class="slide-up-text">Тайминг</h4>
             
             <p class="date">06.06.2026</p>
 
@@ -51,7 +52,7 @@
 
             <div class="tim">
                 <span class="separator"></span>
-                <p class="time">- 15:20 -</p>
+                <p class="time">- 15:15 -</p>
                 <span class="separator"></span>
                 <p class="name">Торжественная церемония</p>
             </div>
@@ -127,7 +128,7 @@
     <section class="hints">
         <div class="wrap">
             <h4>Подсказки</h4>
-            <p>Мы догадываемся, что после получения приглашения у вас может появиться ряд вопросов</p>
+            <p align="center">Мы догадываемся, что после получения приглашения у вас может появиться ряд вопросов</p>
 
             <div class="item">
                 <div class="icon"><i class="fa-solid fa-gifts"></i></i></div>
@@ -206,23 +207,18 @@
     <section class="form">
         <div class="wrap">
             <h4>С нетерпением ждем вас</h4>
-            <p>6 июня | Суббота | Viniteca</p>
+            <p>6 июня | Суббота | Купеческий</p>
 
             <div class="form-container">
                 <form action="YOUR_FORMSPREE_ENDPOINT" method="POST" class="form">
 
                     <label>
-                        Ваше имя*
+                        Ваше имя и фамилия *
                         <input type="text" name="name" required>
                     </label>
 
                     <label>
-                        Телефон*
-                        <input type="text" name="phone" required>
-                    </label>
-
-                    <label>
-                        Планируете ли присутствовать?*
+                        Планируете ли присутствовать? *
                         <select name="attend" required>
                             <option value="">Выберите…</option>
                             <option>Да, я приду</option>
@@ -232,11 +228,13 @@
                     </label>
 
                     <label>
-                        Вы будете с парой?
-                        <select name="with_partner">
-                            <option>Нет</option>
-                            <option>Да</option>
-                        </select>
+                        Телефон *
+                        <input type="text" name="phone" required>
+                    </label>
+
+                    <label>
+                        Я буду с парой? (имя, фамилия)
+                        <input type="text" name="name" required>
                     </label>
 
                     <label>
@@ -245,11 +243,32 @@
                     </label>
 
                     <fieldset>
-                        <legend>Что вы предпочтёте пить?</legend>
-                        <label><input type="checkbox" name="drink" value="Водка"> Водка</label>
-                        <label><input type="checkbox" name="drink" value="Коньяк"> Коньяк</label>
-                        <label><input type="checkbox" name="drink" value="Вино"> Вино</label>
-                        <label><input type="checkbox" name="drink" value="Без алкоголя"> Без алкоголя</label>
+                       <!-- <legend>Что вы предпочтёте пить?</legend>-->
+                        <label>Что вы предпочтёте пить?</label>
+
+                        <label>
+                           <input class="real-checkbox" type="checkbox" name="drink" value="Водка">
+                           <span class="custom-checkbox"></span>
+                           Водка
+                        </label>
+
+                        <label>
+                           <input class="real-checkbox" type="checkbox" name="drink" value="Коньяк">
+                           <span class="custom-checkbox"></span>
+                           Коньяк
+                        </label>
+
+                        <label>
+                           <input class="real-checkbox" type="checkbox" name="drink" value="Вино">
+                           <span class="custom-checkbox"></span>
+                           Вино
+                        </label>
+
+                        <label>
+                           <input class="real-checkbox" type="checkbox" name="drink" value="Без алкоголя">
+                           <span class="custom-checkbox"></span>
+                           Без алкоголя
+                        </label>
                     </fieldset>
 
                     <button type="submit">Отправить</button>
@@ -258,178 +277,11 @@
         </div>
     </section>
 
-    <script type="text/javascript">
-
-    </script>
+    <section class="footter">
+        <div class="wrap">
+            <h1>Ваши<br>Василий и Анастасия</h1>
+        </div>
+    </section>
   
-<!--
-  <main class="page">
-    <div class="container">
-
-        <h1>Свадебный опрос</h1>
-        <p class="lead">Пожалуйста, заполните небольшой опрос — это поможет нам лучше подготовить праздник!</p>
-
-        <form action="YOUR_FORMSPREE_ENDPOINT" method="POST" class="form">
-
-            <label>
-                Ваше имя*
-                <input type="text" name="name" required>
-            </label>
-
-            <label>
-                Телефон*
-                <input type="text" name="phone" required>
-            </label>
-
-            <label>
-                Планируете ли присутствовать?*
-                <select name="attend" required>
-                    <option value="">Выберите…</option>
-                    <option>Да, я приду</option>
-                    <option>Пока не уверен(а)</option>
-                    <option>К сожалению, не смогу прийти</option>
-                </select>
-            </label>
-
-            <label>
-                Вы будете с парой?
-                <select name="with_partner">
-                    <option>Нет</option>
-                    <option>Да</option>
-                </select>
-            </label>
-
-            <label>
-                Есть ли аллергии или ограничения по питанию?
-                <textarea name="allergy" placeholder="Если нет — оставьте пустым"></textarea>
-            </label>
-
-            <fieldset>
-                <legend>Что вы предпочтёте пить?</legend>
-                <label><input type="checkbox" name="drink" value="Водка"> Водка</label>
-                <label><input type="checkbox" name="drink" value="Коньяк"> Коньяк</label>
-                <label><input type="checkbox" name="drink" value="Вино"> Вино</label>
-                <label><input type="checkbox" name="drink" value="Без алкоголя"> Без алкоголя</label>
-            </fieldset>
-
-            <button type="submit">Отправить</button>
-        </form>
-
-    </div>
-  </main>
--->
-
-    <script type="text/javascript">
-        const items = document.querySelectorAll('.gallery-item');
-let index = 0;
-let autoTimer;
-
-// ====== ГАЛЕРЕЯ ======
-function updateGallery() {
-    items.forEach((item) => {
-        item.classList.remove(
-            'gallery-item-1', 'gallery-item-2', 'gallery-item-3',
-            'gallery-item-4', 'gallery-item-5'
-        );
-        item.style.opacity = "1";
-    });
-
-    const i1 = (index - 2 + items.length) % items.length;
-    const i2 = (index - 1 + items.length) % items.length;
-    const i3 = index;
-    const i4 = (index + 1) % items.length;
-    const i5 = (index + 2) % items.length;
-
-    items[i1].classList.add('gallery-item-1');
-    items[i2].classList.add('gallery-item-2');
-    items[i3].classList.add('gallery-item-3');
-    items[i4].classList.add('gallery-item-4');
-    items[i5].classList.add('gallery-item-5');
-}
-
-// ====== АВТОПРОКРУТКА ======
-function startAuto() {
-    autoTimer = setInterval(() => {
-        index = (index + 1) % items.length;
-        updateGallery();
-    }, 3000);
-}
-
-function stopAuto() {
-    clearInterval(autoTimer);
-}
-
-updateGallery();
-startAuto();
-
-
-// ====== СВАЙП / DRAG ======
-let startX = 0;
-let isDragging = false;
-
-const container = document.querySelector('.gallery-container');
-
-// Мышь
-container.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    startX = e.clientX;
-    stopAuto();
-});
-
-document.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-});
-
-document.addEventListener('mouseup', (e) => {
-    if (!isDragging) return;
-    isDragging = false;
-
-    const delta = e.clientX - startX;
-
-    if (Math.abs(delta) > 50) {
-        if (delta < 0) {
-            // свайп влево → следующий
-            index = (index + 1) % items.length;
-        } else {
-            // свайп вправо → предыдущий
-            index = (index - 1 + items.length) % items.length;
-        }
-        updateGallery();
-    }
-
-    startAuto();
-});
-
-// Сенсор
-container.addEventListener('touchstart', (e) => {
-    startX = e.touches[0].clientX;
-    isDragging = true;
-    stopAuto();
-});
-
-container.addEventListener('touchmove', (e) => {
-    // будем использовать только конечное событие
-});
-
-container.addEventListener('touchend', (e) => {
-    if (!isDragging) return;
-    isDragging = false;
-
-    const endX = e.changedTouches[0].clientX;
-    const delta = endX - startX;
-
-    if (Math.abs(delta) > 50) {
-        if (delta < 0) {
-            index = (index + 1) % items.length;
-        } else {
-            index = (index - 1 + items.length) % items.length;
-        }
-        updateGallery();
-    }
-
-    startAuto();
-});
-
-    </script>
 </body>
 </html>
