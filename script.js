@@ -165,11 +165,13 @@ form.addEventListener("submit", async (ev) => {
 
     if (drinks.length === 0) {
         alert("Пожалуйста, выберите хотя бы один напиток");
-    return;
+        return;
+    }
 
-    if(phone.length > 12)
+    if (phone.value.trim().length > 12) {
         alert("Некорректная длина номера телефона");
-    return;
+        return;
+    }
 }
 
     const drinkValues = Array.from(drinks).map(el => el.value);
@@ -199,13 +201,8 @@ form.addEventListener("submit", async (ev) => {
     // склеиваем параметры в одну строку
     formBody = formBody.join("&");
 
-    const decoded = decodeURIComponent(formBody);
-
     console.log("Отправляемые данные:");
-    console.log(decoded);
     console.log("details:", details);
-
-
 
     let result;
 
@@ -226,12 +223,12 @@ form.addEventListener("submit", async (ev) => {
     }
 
     // Проверяем результат
-    if (result.type === "success") {
-      form.reset();
-      alert("Спасибо за заявку!");
-    } else if (result.type === "error") {
-      alert("Ошибка: " + JSON.stringify(result.errors));
-    }
+    if (result && result.type === "success") {
+        form.reset();
+        alert("Спасибо за заявку!");
+      } else if (result && result.type === "error") {
+        alert("Ошибка: " + JSON.stringify(result.errors));
+      }
 
 });
 
