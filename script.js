@@ -207,16 +207,25 @@ form.addEventListener("submit", async (ev) => {
 
 
 
-    const result = await fetch(URL_APP, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-      },
-      body: formBody
-    })
-    .then(res => res.json())
-    .catch(err => alert("Ошибка отправки!"));
+    let result;
 
+    try {
+      const response = await fetch(URL_APP, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+        body: formBody
+      });
+
+      // Пытаемся получить JSON
+      result = await response.json();
+
+    } catch (err) {
+      alert("Ошибка отправки данных: " + err.message);
+      console.error(err);
+      return; // останавливаем обработку, чтобы result не был undefined
+    }
+
+    // Проверяем результат
     if (result.type === "success") {
       form.reset();
       alert("Спасибо за заявку!");
