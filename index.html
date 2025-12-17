@@ -202,7 +202,7 @@
             <p>6 июня | Суббота | Купеческий</p>
 
             <div class="form-container">
-                <form action="YOUR_FORMSPREE_ENDPOINT" method="POST" class="form">
+                <form method="POST" class="form" id = "form">
 
                     <label>
                         Ваше имя и фамилия *
@@ -226,12 +226,12 @@
 
                     <label>
                         Я буду с парой? (имя, фамилия)
-                        <input type="text" name="name" required>
+                        <input type="text" name="name_pair">
                     </label>
 
                     <label>
                         Есть ли аллергии или ограничения по питанию?
-                        <textarea name="allergy" placeholder="Если нет — оставьте пустым"></textarea>
+                        <textarea id="allergy" name="allergy" placeholder="Если нет — оставьте пустым"></textarea>
                     </label>
 
                     <fieldset>

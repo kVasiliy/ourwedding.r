@@ -131,9 +131,106 @@ container.addEventListener('touchend', (e) => {
 });
 
 
+/*********************************************/
+const URL_APP = "https://script.google.com/macros/s/AKfycbyp9OA1i_dINPQSugFVKoZeeAnTJPJHZkvwdbHXLaOJIItx6KnbnUbLuZD_GLeJ_QW_lg/exec"
+
+// находим форму в документе
+const form = document.querySelector("#form");
+
+// указываем адрес отправки формы (нужно только в начале примера)
+form.action = URL_APP;
+
+// вспомогательная функция проверки заполненности формы
+function isFilled(details) {
+    const { name, attend, phone, drink } = details;
+    if (!name) return false;
+    if (!attend) return false;
+    if (!phone) return false;
+    if (!drink) return false;
+    return true;
+}
+
+// навешиваем обработчик на отправку формы
+form.addEventListener("submit", async (ev) => {
+    // отменяем действие по умолчанию
+    ev.preventDefault();
+
+    // получаем ссылки на элементы формы
+    const name = document.querySelector("[name=name]");
+    const attend = document.querySelector("[name=attend]");
+    const phone = document.querySelector("[name=phone]");
+    const name_pair = document.querySelector("[name=name_pair]");
+    const allergy = document.querySelector("[name=allergy]");
+    const drinks = document.querySelectorAll("[name=drink]:checked");
+
+    if (drinks.length === 0) {
+        alert("Пожалуйста, выберите хотя бы один напиток");
+    return;
+
+    if(phone.length > 12)
+        alert("Некорректная длина номера телефона");
+    return;
+}
+
+    const drinkValues = Array.from(drinks).map(el => el.value);
+
+    // собираем данные из элементов формы
+    let details = {
+        name: name.value.trim(),
+        attend: attend.value.trim(),
+        phone: phone.value.trim(),
+        name_pair: name_pair.value.trim(),
+        allergy: allergy.value.trim(),
+        drink: drinkValues.join(", "), // строка: "Водка, Вино"
+    };
+
+// если поля не заполнены - прекращаем обработку
+    if (!isFilled(details)) return;
+
+    // подготавливаем данные для отправки
+    let formBody = [];
+
+    for (let property in details) {
+        // кодируем названия и значения параметров
+        let encodedKey = encodeURIComponent(property);
+        let encodedValue = encodeURIComponent(details[property]);
+        formBody.push(encodedKey + "=" + encodedValue);
+    }
+    // склеиваем параметры в одну строку
+    formBody = formBody.join("&");
+
+    const decoded = decodeURIComponent(formBody);
+
+    console.log("Отправляемые данные:");
+    console.log(decoded);
+    console.log("details:", details);
 
 
 
+    // выполняем отправку данных в Google Apps
+    const result = await fetch(URL_APP, {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+        },
+        //cors: "no-cors", <- это неправильно
+        mode: "cors", //<- оставим по умолчанию
+        body: formBody,
+    })
+        .then((res) => res.json())
+        .catch((err) => alert("Ошибка!"))
+        .then((res) => console.log(res));
+      
+     if( result.type === 'success' ) {
+        form.reset();
+        alert('Спасибо за заявку!')
+     }
+     if( result.type === 'error' ) {            
+        alert(`Ошибка( ${result.errors}`)
+     }
+
+
+    });
 
 
 
