@@ -207,46 +207,23 @@ form.addEventListener("submit", async (ev) => {
 
 
 
-    // выполняем отправку данных в Google Apps
     const result = await fetch(URL_APP, {
-        method: "POST",
-        headers: {
+      method: "POST",
+      headers: {
         "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-        },
-        //cors: "no-cors", <- это неправильно
-        mode: "cors", //<- оставим по умолчанию
-        body: formBody,
+      },
+      body: formBody
     })
-        .then((res) => res.json())
-        .catch((err) => alert("Ошибка!"))
-        .then((res) => console.log(res));
-      
-     if( result.type === 'success' ) {
-        form.reset();
-        alert('Спасибо за заявку!')
-     }
-     if( result.type === 'error' ) {            
-        alert(`Ошибка( ${result.errors}`)
-     }
+    .then(res => res.json())
+    .catch(err => alert("Ошибка отправки!"));
 
+    if (result.type === "success") {
+      form.reset();
+      alert("Спасибо за заявку!");
+    } else if (result.type === "error") {
+      alert("Ошибка: " + JSON.stringify(result.errors));
+    }
 
-    });
-
-
-
-    
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+});
