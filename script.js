@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if(entry.isIntersecting){
@@ -11,11 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.slide-up-text').forEach(el => {
         observer.observe(el);
     });
-
-
-
-
-
 
 
 /*************************/
@@ -132,104 +129,104 @@ container.addEventListener('touchend', (e) => {
 
 
 /*********************************************/
-const URL_APP = "https://script.google.com/macros/s/AKfycbyp9OA1i_dINPQSugFVKoZeeAnTJPJHZkvwdbHXLaOJIItx6KnbnUbLuZD_GLeJ_QW_lg/exec"
+    const URL_APP = "https://script.google.com/macros/s/AKfycbyp9OA1i_dINPQSugFVKoZeeAnTJPJHZkvwdbHXLaOJIItx6KnbnUbLuZD_GLeJ_QW_lg/exec"
 
-// находим форму в документе
-const form = document.querySelector("#form");
+    // находим форму в документе
+    const form = document.querySelector("#form");
 
-// указываем адрес отправки формы (нужно только в начале примера)
-form.action = URL_APP;
+    // указываем адрес отправки формы (нужно только в начале примера)
+    form.action = URL_APP;
 
-// вспомогательная функция проверки заполненности формы
-function isFilled(details) {
-    const { name, attend, phone, drink } = details;
-    if (!name) return false;
-    if (!attend) return false;
-    if (!phone) return false;
-    if (!drink) return false;
-    return true;
-}
-
-// навешиваем обработчик на отправку формы
-form.addEventListener("submit", async (ev) => {
-    // отменяем действие по умолчанию
-    ev.preventDefault();
-
-    // получаем ссылки на элементы формы
-    const name = document.querySelector("[name=name]");
-    const attend = document.querySelector("[name=attend]");
-    const phone = document.querySelector("[name=phone]");
-    const name_pair = document.querySelector("[name=name_pair]");
-    const allergy = document.querySelector("[name=allergy]");
-    const drinks = document.querySelectorAll("[name=drink]:checked");
-
-    if (drinks.length === 0) {
-        alert("Пожалуйста, выберите хотя бы один напиток");
-        return;
+    // вспомогательная функция проверки заполненности формы
+    function isFilled(details) {
+        const { name, attend, phone, drink } = details;
+        if (!name) return false;
+        if (!attend) return false;
+        if (!phone) return false;
+        if (!drink) return false;
+        return true;
     }
 
-    if (phone.value.trim().length > 12) {
-        alert("Некорректная длина номера телефона");
-        return;
-    }
-}
+    // навешиваем обработчик на отправку формы
+    form.addEventListener("submit", async (ev) => {
+        // отменяем действие по умолчанию
+        ev.preventDefault();
 
-    const drinkValues = Array.from(drinks).map(el => el.value);
+        // получаем ссылки на элементы формы
+        const name = document.querySelector("[name=name]");
+        const attend = document.querySelector("[name=attend]");
+        const phone = document.querySelector("[name=phone]");
+        const name_pair = document.querySelector("[name=name_pair]");
+        const allergy = document.querySelector("[name=allergy]");
+        const drinks = document.querySelectorAll("[name=drink]:checked");
 
-    // собираем данные из элементов формы
-    let details = {
-        name: name.value.trim(),
-        attend: attend.value.trim(),
-        phone: phone.value.trim(),
-        name_pair: name_pair.value.trim(),
-        allergy: allergy.value.trim(),
-        drink: drinkValues.join(", "), // строка: "Водка, Вино"
-    };
+        if (drinks.length === 0) {
+            alert("Пожалуйста, выберите хотя бы один напиток");
+            return;
+        }
 
-// если поля не заполнены - прекращаем обработку
-    if (!isFilled(details)) return;
+        if (phone.value.trim().length > 12) {
+            alert("Некорректная длина номера телефона");
+            return;
+        }
+    
 
-    // подготавливаем данные для отправки
-    let formBody = [];
+        const drinkValues = Array.from(drinks).map(el => el.value);
 
-    for (let property in details) {
-        // кодируем названия и значения параметров
-        let encodedKey = encodeURIComponent(property);
-        let encodedValue = encodeURIComponent(details[property]);
-        formBody.push(encodedKey + "=" + encodedValue);
-    }
-    // склеиваем параметры в одну строку
-    formBody = formBody.join("&");
+        // собираем данные из элементов формы
+        let details = {
+            name: name.value.trim(),
+            attend: attend.value.trim(),
+            phone: phone.value.trim(),
+            name_pair: name_pair.value.trim(),
+            allergy: allergy.value.trim(),
+            drink: drinkValues.join(", "), // строка: "Водка, Вино"
+        };
 
-    console.log("Отправляемые данные:");
-    console.log("details:", details);
+        // если поля не заполнены - прекращаем обработку
+        if (!isFilled(details)) return;
 
-    let result;
+        // подготавливаем данные для отправки
+        let formBody = [];
 
-    try {
-      const response = await fetch(URL_APP, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-        body: formBody
-      });
+        for (let property in details) {
+            // кодируем названия и значения параметров
+            let encodedKey = encodeURIComponent(property);
+            let encodedValue = encodeURIComponent(details[property]);
+            formBody.push(encodedKey + "=" + encodedValue);
+        }
+        // склеиваем параметры в одну строку
+        formBody = formBody.join("&");
 
-      // Пытаемся получить JSON
-      result = await response.json();
+        console.log("Отправляемые данные:");
+        console.log("details:", details);
+        
+        let result;
 
-    } catch (err) {
-      alert("Ошибка отправки данных: " + err.message);
-      console.error(err);
-      return; // останавливаем обработку, чтобы result не был undefined
-    }
+        try {
+          const response = await fetch(URL_APP, {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+            body: formBody
+          });
 
-    // Проверяем результат
-    if (result && result.type === "success") {
-        form.reset();
-        alert("Спасибо за заявку!");
-      } else if (result && result.type === "error") {
-        alert("Ошибка: " + JSON.stringify(result.errors));
-      }
+          // Пытаемся получить JSON
+          result = await response.json();
+
+        } catch (err) {
+          alert("Ошибка отправки данных: " + err.message);
+          console.error(err);
+          return; // останавливаем обработку, чтобы result не был undefined
+        }
+
+        // Проверяем результат
+        if (result && result.type === "success") {
+            form.reset();
+            alert("Спасибо за заявку!");
+        } else if (result && result.type === "error") {
+            alert("Ошибка: " + JSON.stringify(result.errors));
+        }
+    });
 
 });
 
-});
